@@ -2,11 +2,11 @@ package com.yasser.data_remote.common.apiResponse
 
 import com.google.gson.annotations.SerializedName
 
-enum class APIStatusCode {
+enum class APIStatusCode(val value:Int) {
     @SerializedName("200")
-    SUCCESS,
+    SUCCESS(200),
     @SerializedName("404")
-    NOT_FOUND,
+    NOT_FOUND(404),
     @SerializedName("401")
-    UN_AUTHORIZED
+    UN_AUTHORIZED(401)
 }

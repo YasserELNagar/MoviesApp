@@ -11,15 +11,15 @@ object NetworkUtil {
         try {
             val response = call.invoke()
 
-            when(response.body()?.statusCode){
-                APIStatusCode.SUCCESS->{
+            when(response.code()){
+                APIStatusCode.SUCCESS.value->{
                     return response.body()
                 }
-                APIStatusCode.UN_AUTHORIZED->{
+                APIStatusCode.UN_AUTHORIZED.value->{
                     throw AppException.UnAuthorizedException
                 }
                 else->{
-                 throw AppException.GeneralApiError(response.body()?.statusMessage)
+                 throw AppException.GeneralApiError(response.body()?.status_message)
                 }
             }
 

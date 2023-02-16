@@ -6,4 +6,5 @@ interface IMovieRemoteDataSource {
     suspend fun getPopularMovies(page:Int): MoviesListDTO?
     suspend fun getTopRatedMovies(page:Int): MoviesListDTO?
     suspend fun getNowPlayingMovies(page:Int): MoviesListDTO?
+    suspend fun searchForMovie(query:String,page:Int): MoviesListDTO?
 }

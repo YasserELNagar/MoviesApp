@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Movies App</string>
+    <string name="home">Home</string>
+    <string name="favorites">Favorites</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_by_name">Search by Name</string>
+    <string name="connection_error">Connection Error!!</string>
+    <string name="unauthorized_access">UnAuthorized Access!!</string>
+    <string name="unknown_error">UnKnow Error!!</string>
+    <string name="sort">Sort</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="playing_now">Playing Now</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="top_rated">Top Rated</string>
 </resources>

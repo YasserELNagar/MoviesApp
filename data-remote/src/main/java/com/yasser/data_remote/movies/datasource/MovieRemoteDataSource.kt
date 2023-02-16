@@ -29,4 +29,10 @@ class MovieRemoteDataSource @Inject constructor (
             NetworkUtil.processAPICall { api.nowPlayingMovies(page) }
         }
     }
+
+    override suspend fun searchForMovie(query: String, page: Int): MoviesListDTO? {
+        return withContext(coroutineScopeDispatchers.IO){
+            NetworkUtil.processAPICall { api.searchForMovie(query,page) }
+        }
+    }
 }

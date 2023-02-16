@@ -8,6 +8,7 @@ import com.yasser.data_remote.common.interceptor.AppInterceptor
 import com.yasser.data_remote.movies.service.MoviesServicesApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.yasser.data_remote.genres.service.GenresServicesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -64,6 +65,18 @@ object NetworkModule {
     @Provides
     fun provideMoviesServicesApi(retrofit: Retrofit): MoviesServicesApi {
         return retrofit.create(MoviesServicesApi::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideGenreServicesApi(retrofit: Retrofit): GenresServicesApi {
+        return retrofit.create(GenresServicesApi::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesCoroutineDispatcher():ICoroutineDispatchers{
+        return AppCoroutineDispatchers()
     }
 
 }

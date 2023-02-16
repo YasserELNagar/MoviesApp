@@ -13,6 +13,9 @@ interface MoviesServicesApi {
     @GET("movie/top_rated")
     suspend fun topRatedMovies(@Query("page") page:Int):Response<MoviesListDTO>
 
-    @GET("now_playing")
+    @GET("movie/now_playing")
     suspend fun nowPlayingMovies(@Query("page") page:Int):Response<MoviesListDTO>
+
+    @GET("search/movie")
+    suspend fun searchForMovie(@Query("query") query:String,@Query("page") page:Int):Response<MoviesListDTO>
 }
