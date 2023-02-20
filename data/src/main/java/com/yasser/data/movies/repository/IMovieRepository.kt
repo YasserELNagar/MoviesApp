@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 
 interface IMovieRepository {
-    suspend fun loadPopularMovies(page:Int): Boolean?
+    suspend fun loadPopularMoviesWithPagination(page:Int): Boolean?
     suspend fun loadTopRatedMovies(page:Int): Boolean?
     suspend fun loadNowPlayingMovies(page:Int): Boolean?
     suspend fun searchForMovie(query:String,page:Int): Pair<List<MovieModel>?,Boolean>?

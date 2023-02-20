@@ -7,12 +7,12 @@ import com.yasser.data_remote.common.apiResponse.GeneralApiResponse
 
 @Keep
 data class MoviesListDTO(
-    val page: Int?,
-    val results: List<MovieDTO>?,
-    val total_pages: Int?,
-    val total_results: Int?,
+    val page: Int?=null,
+    val results: List<MovieDTO>?=null,
+    val total_pages: Int?=null,
+    val total_results: Int?=null,
     @Expose
-    override val status_code: APIStatusCode,
+    override val status_code: APIStatusCode?=null,
     @Expose
-    override val status_message: String?
+    override val status_message: String?=null
 ): GeneralApiResponse()
