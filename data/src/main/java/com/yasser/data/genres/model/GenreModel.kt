@@ -7,6 +7,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Keep
 data class GenreModel(
-    val id: Int?,
-    val name: String?,
+    val id: Int?=null,
+    val name: String?=null,
 ):Parcelable
