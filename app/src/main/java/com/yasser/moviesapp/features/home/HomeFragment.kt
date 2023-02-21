@@ -49,8 +49,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
 
     override fun init() {
         super.init()
+        viewModel.getMoviesList()
+        viewModel.loadMovies()
+
         setupMoviesAdapterRV()
         setupClickListeners()
+
     }
 
     private fun setupClickListeners() {

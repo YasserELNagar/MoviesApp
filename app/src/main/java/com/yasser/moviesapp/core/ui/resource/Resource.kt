@@ -9,7 +9,7 @@ sealed class Resource<out T>(
     val error:Throwable?
 ) {
 
-    class Initial<T>: Resource<T>(status = Status.COMPLETE, data = null, error = null)
+    class Initial<T>: Resource<T>(status = Status.INITIAL, data = null, error = null)
     class Loading<T>: Resource<T>(status = Status.LOADING, data = null, error = null)
     class COMPLETE<T> : Resource<T>(status = Status.COMPLETE, data = null, error = null)
     class SUCCESS<T>(data: T?) : Resource<T>(status = Status.SUCCESS, data = data, error = null)

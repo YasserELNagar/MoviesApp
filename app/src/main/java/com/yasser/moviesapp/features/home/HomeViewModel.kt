@@ -32,17 +32,11 @@ class HomeViewModel @Inject constructor(
     private val _loadMoviesStateFlow = MutableStateFlow<Resource<Boolean?>>(Resource.Initial())
     val loadMoviesStateFlow: StateFlow<Resource<Boolean?>> = _loadMoviesStateFlow
 
-
     val currentPagination = Pagination()
 
     private var selectedSortingType = SortingType.PLAYING_NOW
 
-    init {
-        getMoviesList()
-        loadMovies()
-    }
-
-    private fun getMoviesList() {
+    fun getMoviesList() {
         viewModelScope.launch {
             getMoviesListUseCase().collect {
                 _moviesListStateFlow.value = it
@@ -64,7 +58,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private fun loadNowPlayingMovies(pagination: Pagination) {
+    fun loadNowPlayingMovies(pagination: Pagination) {
         if (!pagination.canPaginate()) return
         viewModelScope.launch {
             try {
